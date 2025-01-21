@@ -1,3 +1,4 @@
+DB schema
 ![db shema](https://github.com/user-attachments/assets/174521e9-0966-414b-8dba-0d592cee8913)BudgetBuddy - Expense Tracker App
 Project Description:
 BudgetBuddy is a comprehensive expense tracker app designed to help users 
