@@ -48,12 +48,12 @@ export const signinUser = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    if (!(email || password)) {  
-      return res.status(404).json({
-        status: "failed",
-        message: "Provide Required Fields!",
-      });
-    }
+    // if (!(email || password)) {  
+    //   return res.status(404).json({
+    //     status: "failed",
+    //     message: "Provide Required Fields!",
+    //   });
+    // }
 
     const result = await pool.query({
       text: `SELECT * FROM tbluser WHERE email = $1`,

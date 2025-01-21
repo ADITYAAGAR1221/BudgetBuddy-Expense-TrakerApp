@@ -45,26 +45,23 @@ const SignUp = () => {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-  
+
       // API call
-      const response = await api.post("/auth/sign-up", data);
-  
-      if (response?.data?.user) {
-        toast.success("Account created successfully. You can now log in.");
+      const {data: res} = await api.post("/auth/sign-up", data);
+
+      if (res?.user) {
+        toast.success("Account created successfully. You can now login.");
         setTimeout(() => {
           navigate("/sign-in");
         }, 1500);
-      } else {
-        toast.error("Unexpected error occurred. Please try again.");
       }
     } catch (error) {
-      console.error("Error during sign-up:", error);
-      toast.error(error?.response?.data?.message || "Failed to create account.");
+      console.error(error);
+      toast.error(error?.response?.data?.message || error.message);
     } finally {
       setLoading(false);
     }
   };
-  
 
   return (
     <div className="flex items-center justify-center w-full min-h-screen py-10 bg-gray-100 dark:bg-gray-900">

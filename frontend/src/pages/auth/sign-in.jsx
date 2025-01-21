@@ -9,6 +9,10 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../../comp
 import Input from "../../components/ui/input.jsx";
 import { Button } from "../../components/ui/button.jsx";
 import { BiLoader } from "react-icons/bi";
+import { toast, ToastContainer } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css"; 
+import api from "../../libs/apiCall.js";
+
 
 const LoginSchema = z.object({
   email: z
@@ -20,7 +24,7 @@ const LoginSchema = z.object({
 });
 
 const SignIn = () => {
-  const { user } = useStore((state) => state);
+  const { user,setCredentails } = useStore((state) => state);
   const {
     register,
     handleSubmit,
@@ -37,7 +41,29 @@ const SignIn = () => {
   }, [user]);
 
   const onSubmit = async (data) => {
-    console.log(data);
+    try {
+      setLoading(true);
+
+      // API call
+      const {data: res} = await api.post("/auth/sign-in", data);
+
+      if (res?.user) {
+        toast.success(res?.message);
+
+        const userInfo = {...res?.user, token: res.token};
+        localStorage.setItem("user",JSON.stringify(userInfo));
+        setCredentails(userInfo);
+
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 1500);
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(error?.response?.data?.message || error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
