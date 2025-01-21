@@ -1,4 +1,4 @@
-BudgetBuddy - Expense Tracker App
+![db shema](https://github.com/user-attachments/assets/174521e9-0966-414b-8dba-0d592cee8913)BudgetBuddy - Expense Tracker App
 Project Description:
 BudgetBuddy is a comprehensive expense tracker app designed to help users 
 efficiently manage their finances. The app allows users to track their income and expenses, 
@@ -10,50 +10,22 @@ with robust data security, making it an ideal tool for personal financial manage
 Key Features:
 
 1. User Authentication:
-
-Secure user login/signup using Firebase Authentication.
-Ensures data privacy and provides a personalized experience for each user.
-
 2. Expense Management:
-
-Add, update, and delete income or expense records with details such as date, category, and description.
-View all transactions in a clear and organized format.
-
 3. Expense Insights:
-
-Generate summaries of spending habits, grouped by categories like Food, Rent, Travel, etc.
-Visualize financial data through charts like bar graphs and doughnut charts
-
 4. Filtering and Reporting:
-
-View transactions by specific categories or time ranges.
-Generate monthly or yearly expense reports for better financial planning.
-
 5. User-Friendly Design:
-
-Responsive design for accessibility on both mobile and desktop devices.
-Intuitive UI/UX built with ReactJS and Bootstrap.
-
 6. Backend and Database:
-
-Backend development using Node.js and Express.js for handling API requests.
-PostgreSQL database for storing user data, transactions, and categories.
-
 7. Data Security:
-
-Secure authentication with Firebase ensures only authorized access to user data.
-Well-structured database design for reliable and efficient data handling.
 
 Tech Stack:
 
 Frontend: ReactJS, HTML, CSS, Bootstrap
 Backend: Node.js, Express.js
 Database: PostgreSQL
-Authentication: Firebase Authentication
 Version Control: Git and GitHub
 
-Potential Future Enhancements:
 
+Potential Future Enhancements:
 Integration of recurring expenses for subscriptions or regular bills.
 Multi-currency support for global users.
 Notification system for budget limits or expense tracking reminders.
